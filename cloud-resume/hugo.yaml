@@ -1,3 +1,368 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: "https://hugo-profile.netlify.app"
+languageCode: "en-us"
+title: "Hugo Profile"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Menus:
+  # main:
+    # - identifier: blog
+    #   name: Blog
+    #   title: Blog posts
+    #   url: /blogs
+    #   weight: 1
+    # - identifier: gallery
+    #   name: Gallery
+    #   title: Blog posts
+    #   url: /gallery
+    #   weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+deployment:
+  targets:
+    name: "Test"
+    url:  "gs://djwalker-resume-bucket-1"
+
+params:
+  title: "Hugo Profile"
+  description: Text about my cool site
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+  
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # color:
+  #   textColor:
+  #   secondaryTextColor:
+  #   backgroundColor:
+  #   secondaryBackgroundColor:
+  #   primaryColor:
+  #   secondaryColor:
+
+  #   darkmode:
+  #     textColor:
+  #     secondaryTextColor:
+  #     backgroundColor:
+  #     secondaryBackgroundColor:
+  #     primaryColor:
+  #     secondaryColor:
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableContributions: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Davontae"
+    subtitle: "I facilitate life and business through the use of technology"
+    # content: "A well rounded software engineer and tenacious problem solver with the ability to learn quickly and apply independently."
+    image: /images/headshot_party.jpg
+    bottomImage:
+      enable: true
+    roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Resume"
+      url: "#"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://example.com
+        - icon: fab fa-x-twitter
+          url: https://example.com
+      customIcons:
+        - icon: /fav.png
+          url: "https://example.com"
+
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/headshot_grad.JPG"
+    content: |-
+      I am a well rounded software engineer and a tenacious problem solver with the ability to learn quickly and apply independently
+     
+      I am currently working on building cloud architecture and development skills.
+    skills:
+      enable: true
+      title: "Here are a few things I have experience with:"
+      items:
+        - "HTML/CSS/JS"
+        - "AngularDart"
+        - "SQL/SSMS"
+        - "Webdriver"
+        - "Google Appsheet"
+        - "Lucidchart"
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - job: "Software Engineer"
+        company: "Google"
+        companyUrl: "https://example.com"
+        date: "Sep 2019 - Mar 2024"
+        content: |
+          Corp EngProd - Engagements Application
+            - Developed multiple pages and components for application's UI refresh
+            - Improved application's usability and maintainability by applying UX and testing best practices
+            - Developed a plan to mitigate impact to team's metrics dashboard during a transitional period for the application
+
+          Corp EngProd - Short Term Engagements
+            - Consulted with corporate engineering teams to identify testing needs
+            - Developed integration, end-to-end, and performance testing suites to catch regressions in applications highest priority CUJs
+            - Used webdriver expertise to assist fellow consultants with their engagements
+
+          Engineering Residency
+            - Designed and developed a UI that increased the efficiency of 3 highly used processes by the Internal Community Management team
+            - Fixed numerous bugs related to the team's UI refresh dogfood launch
+
+
+      - job: "Software Engineer"
+        company: "Saturn Ergonomics"
+        companyUrl: "https://example.com"
+        date: "Jan 2019 - Aug 2019"
+        content: |
+          Senior Design project
+            - Developed an online database for ergonomics research data using ASP.NET and SSMS
+
+          Independent Contractor
+            - Created an automated test suite for the online database using Selenium Webdriver
+
+      - job: "Junior Software Engineer"
+        company: "Auburn Office of Information Technology"
+        date: "Jan 2017 - Oct 2018"
+        info:
+          enable: false
+        content: |
+          Theather Attendance Tracker App
+           - Designed and developed a responsive UI using Xamarin Forms for a kiosk application 
+             that recorded student attendance at theather events
+           
+          Athletics Nutrition Inventory App
+           - Performed bug fixes and onsite troubleshooting for admin portion of the inventory app
+
+          Microsoft Access to SQL Server Management Studio Database Migration
+           - Lead a team of two junior developers through the migration
+           - Created a plan for the migration and delegated tasks responsively to execute the plan
+
+
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "Bachelor of Science in Software Engineering"
+        school:
+          name: "Auburn University"
+        date: "2014 - 2019"
+        content: |-
+            - Spirit of Auburn Founders Scholarship recipient (Fall 2014) 
+            - Chapter Keeper of Finance - Omega Psi Phi Fraternity Inc. (Jan 2016 - Nov 2016)
+            - Chapter Keeper of Records and Seals - Omega Psi Phi Fraternity Inc. (Nov 2017 - May 2018)
+            - Vice President of Administration - National Pan-Hellenic Council, Auburn University (May 2018 - Nov 2018)
+            - Dean's List (Spring 2018, Fall 2018)
+  
+  # Community Contributions
+  contributions:
+    enable: true
+    title: "Community Contributions"
+    items:
+      - title: Tech Exchange Project Coach (Spring 2022)
+        content: Guided a group of three HBCU sophomores as they completed projects for a software development course 
+                 co-taught by HBCU instructors and Googlers
+        # url: https://example.com
+        # image: /images/achievment.jpg
+
+      - title: Code Next Workshop Volunteer (Fall 2023)
+        content: Co-led an introductory software development workshop for a group of minority high school students
+
+      # - title: Tech Exchange Project Coach (Spring 2022)
+      #   content: Guided a group of three HBCU sophomores as they completed projects for a software development course 
+      #            co-taught by HBCU instructors and Googlers
+
+  # projects
+  projects:
+    enable: false
+    # title: "Custom Name"
+    items:
+      - title: Hugo Profile
+        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
+        image: /images/projects/profile.png
+        featured:
+          name: Demo
+          link: https://hugo-profile.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fa fa-envelope
+            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/hugo-profile
+          - icon: fab fa-twitter
+            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+
+      - title: Image Converter
+        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+        image: /images/projects/converter.jpg
+        featured:
+          name: Demo
+          link: https://django-converter.herokuapp.com
+        badges:
+          - "Django"
+          - "Bootstrap"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/converter
+
+      - title: Hugo Profile V2
+        content: A clean and simple Hugo template for personal portfolio and blog.
+        image: /images/projects/profile2.jpg
+        featured:
+          name: Demo V2
+          link: https://hugo-profile-2.netlify.app
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/HugoProfileV2
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+    email: davontaewalker15@gmail.com
+    btnName: Contact me
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      # github: https://github.com
+      linkedin: https://linkedin.com/in/davontae-walker-6224b7120
+      # twitter: https://twitter.com
+      # instagram: https://instagram.com
+      # facebook: https://facebook.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
