@@ -18,4 +18,5 @@ jobs:
       - run: |
           cd "${{ github.workspace }}/cloud-resume"
           ls
+      - run: hugo help
       - run: echo "🍏 This job's status is ${{ job.status }}."
