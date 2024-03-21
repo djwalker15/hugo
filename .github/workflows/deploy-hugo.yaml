@@ -20,4 +20,6 @@ jobs:
           ls
       - run: |
           sudo apt install hugo
+      - run: |
+          hugo help
       - run: echo "🍏 This job's status is ${{ job.status }}."
