@@ -129,7 +129,7 @@ params:
   hero:
     enable: true
     intro: "Hi, my name is"
-    title: "Davontae"
+    title: "Davontae Walker"
     subtitle: "I facilitate life and business through the use of technology"
     # content: "A well rounded software engineer and tenacious problem solver with the ability to learn quickly and apply independently."
     image: /images/headshot_party.jpg
