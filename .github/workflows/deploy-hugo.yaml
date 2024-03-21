@@ -15,6 +15,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: cd ${{ github.workspace }}/cloud-resume
-      - run: ls
+      - run: |
+          cd "${{ github.workspace }}/cloud-resume"
+          ls
       - run: echo "🍏 This job's status is ${{ job.status }}."
