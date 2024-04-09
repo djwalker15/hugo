@@ -58,7 +58,7 @@ deployment:
     url:  "gs://djwalker-resume-bucket-1"
 
 params:
-  title: "Hugo Profile"
+  title: "Resume - Davontae Walker"
   description: Text about my cool site
   # staticPath: ""  # The path to serve the static files from
   favicon: "/fav.png"
